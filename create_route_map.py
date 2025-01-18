@@ -1,5 +1,10 @@
+import sys
 from route_optimizer import RouteOptimizer
 import urllib.parse
+from getlocation import get_coordinates
+import googlemaps
+from dotenv import load_dotenv
+import os
 
 
 def format_route_data(route, total_distance, optimizer):
@@ -44,10 +49,34 @@ def generate_google_maps_url(route):
     return base_url + "/".join(encoded_locations)
 
 
-def main():
+def main(csv_file_path, start_station_name):
+    # .envファイルから環境変数を読み込む
+    load_dotenv()
+
+    # 環境変数からAPIキーを取得
+    API_KEY = os.getenv("API_KEY")
+
+    if not API_KEY:
+        print("Error: API_KEY not found in .env file")
+        return
+
+    # Google Maps クライアントを初期化
+    gmaps = googlemaps.Client(key=API_KEY)
+
+    # 開始地点の座標を取得
+    start_lat, start_lng = get_coordinates(gmaps, start_station_name)
+    if start_lat is None or start_lng is None:
+        print(f"Error: Could not find coordinates for {start_station_name}")
+        return
+
     # 1. ルートの最適化
     print("ルートを計算中...")
-    optimizer = RouteOptimizer("harajuku_restaurants_with_coordinates.csv")
+    start_point = {
+        "name": start_station_name,
+        "latitude": start_lat,
+        "longitude": start_lng,
+    }
+    optimizer = RouteOptimizer(csv_file_path, start_point=start_point)
     route, total_distance = optimizer.find_optimal_route()
 
     # 最適化されたルートを表示
@@ -61,4 +90,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) < 3:
+        print("Error: CSVファイルのパスと開始地点の駅名を指定してください。")
+    else:
+        csv_file_path = sys.argv[1]
+        start_station_name = sys.argv[2]
+        main(csv_file_path, start_station_name)
