@@ -19,13 +19,15 @@ def scrape_cabacaba():
         response.raise_for_status()
         soup = BeautifulSoup(response.text, "html.parser")
 
-        # 店舗情報を含むdiv要素を取得
-        store_infos = soup.select("div.list-info")
         stores_data = []
         count = 0
 
+        # 店舗情報を含むdiv要素を取得
+        club_tops = soup.select("div.club-top")
+        store_infos = soup.select("div.list-info")
+
         # 最初の5件の店舗情報を取得
-        for store_info in store_infos[:5]:
+        for club_top, store_info in zip(club_tops[:5], store_infos[:5]):
             store_data = {
                 "name": "",
                 "area": "",
@@ -37,16 +39,21 @@ def scrape_cabacaba():
             }
 
             # 店舗名とエリアを取得
-            store_title = store_info.find_previous_sibling("div", class_="text-wrapper")
-            if store_title:
-                name_link = store_title.select_one("h2.blog-title a.link")
-                if name_link:
-                    store_data["name"] = name_link.text.strip()
-                area_text = store_title.select_one("p.comment")
-                if area_text:
-                    store_data["area"] = area_text.text.strip()
+            text_wrapper = club_top.select_one("div.text-wrapper")
+            if text_wrapper:
+                # 店舗名を取得
+                blog_title = text_wrapper.select_one("h2.blog-title a.link")
+                if blog_title:
+                    store_data["name"] = blog_title.text.strip()
 
-            # 情報を取得
+                # エリアを取得
+                area_text = text_wrapper.select_one("p.comment")
+                if area_text:
+                    # "のキャバクラ"を除去してエリアのみを取得
+                    area = area_text.text.replace("のキャバクラ", "").strip()
+                    store_data["area"] = area
+
+            # その他の情報を取得
             info_items = store_info.select("ul li")
             for item in info_items:
                 label = item.select_one("label.text")
