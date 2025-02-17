@@ -18,17 +18,15 @@ def scrape_cabacaba():
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
-    # ChromeDriverのパスを指定
-    service = Service(
-        executable_path="/usr/local/bin/chromedriver"
-    )  # ここにChromeDriverのパスを指定してね
+    # 正しいChromeDriverのパスを指定
+    service = Service(executable_path="/usr/local/bin/chromedriver")
     driver = webdriver.Chrome(service=service, options=options)
 
     try:
         driver.get(url)
         wait = WebDriverWait(driver, 10)
 
-        # 100件取得するために「もっと見る」ボタンをクリック
+        # 10件取得するために「もっと見る」ボタンをクリック
         while True:
             try:
                 load_more_button = wait.until(
@@ -40,9 +38,9 @@ def scrape_cabacaba():
                 print("❌ ボタンが見つからないか、クリックできませんでした。")
                 break
 
-            # 100件以上表示されたらループを抜ける
+            # 10件以上表示されたらループを抜ける
             soup = BeautifulSoup(driver.page_source, "html.parser")
-            if len(soup.select("div.club-top")) >= 100:
+            if len(soup.select("div.club-top")) >= 10:
                 break
 
         soup = BeautifulSoup(driver.page_source, "html.parser")
@@ -53,7 +51,7 @@ def scrape_cabacaba():
         club_tops = soup.select("div.club-top")
         store_infos = soup.select("div.list-info")
 
-        for club_top, store_info in zip(club_tops[:100], store_infos[:100]):
+        for club_top, store_info in zip(club_tops[:10], store_infos[:10]):
             store_data = {
                 "name": "",
                 "kana": "",
@@ -64,6 +62,7 @@ def scrape_cabacaba():
                 "budget": "",
                 "phone": "",
                 "address": "",
+                "website": "",  # ウェブサイトURLを追加
             }
 
             text_wrapper = club_top.select_one("div.text-wrapper")
@@ -78,6 +77,9 @@ def scrape_cabacaba():
                     # 店舗名と読み仮名を分ける
                     if " - " in full_name:
                         store_data["name"], store_data["kana"] = full_name.split(" - ")
+
+                    # ウェブサイトURLを取得
+                    store_data["website"] = blog_title["href"]
 
                 area_text = text_wrapper.select_one("p.comment")
                 if area_text:
@@ -125,6 +127,7 @@ def scrape_cabacaba():
             print(f"💰 予算: {store_data['budget']}")
             print(f"📱 電話: {store_data['phone']}")
             print(f"🏠 住所: {store_data['address']}")
+            print(f"🔗 ウェブサイト: {store_data['website']}")
 
         # CSVに保存
         output_file = "cabacaba_stores.csv"
@@ -139,6 +142,7 @@ def scrape_cabacaba():
                 "budget",
                 "phone",
                 "address",
+                "website",  # ウェブサイトURLを追加
             ]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
