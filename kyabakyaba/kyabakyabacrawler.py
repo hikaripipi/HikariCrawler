@@ -1,21 +1,51 @@
-import requests
-from bs4 import BeautifulSoup
+import time
 import csv
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from bs4 import BeautifulSoup
 
 
 def scrape_cabacaba():
     print("🌸 C-chan: スクレイピングを開始します！")
 
     url = "https://www.caba2.net/tokyo/_list"
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
-    }
+    options = Options()
+    options.add_argument("--headless")  # ヘッドレスモードで実行
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+
+    # ChromeDriverのパスを指定
+    service = Service(
+        executable_path="/usr/local/bin/chromedriver"
+    )  # ここにChromeDriverのパスを指定してね
+    driver = webdriver.Chrome(service=service, options=options)
 
     try:
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.text, "html.parser")
+        driver.get(url)
+        wait = WebDriverWait(driver, 10)
 
+        # 100件取得するために「もっと見る」ボタンをクリック
+        while True:
+            try:
+                load_more_button = wait.until(
+                    EC.element_to_be_clickable((By.CLASS_NAME, "load-more__btn"))
+                )
+                load_more_button.click()
+                time.sleep(2)  # ページがロードされるのを待つ
+            except Exception as e:
+                print("❌ ボタンが見つからないか、クリックできませんでした。")
+                break
+
+            # 100件以上表示されたらループを抜ける
+            soup = BeautifulSoup(driver.page_source, "html.parser")
+            if len(soup.select("div.club-top")) >= 100:
+                break
+
+        soup = BeautifulSoup(driver.page_source, "html.parser")
         stores_data = []
         seen_names = set()
         count = 0
@@ -23,7 +53,7 @@ def scrape_cabacaba():
         club_tops = soup.select("div.club-top")
         store_infos = soup.select("div.list-info")
 
-        for club_top, store_info in zip(club_tops[:5], store_infos[:5]):
+        for club_top, store_info in zip(club_tops[:100], store_infos[:100]):
             store_data = {
                 "name": "",
                 "kana": "",
@@ -121,6 +151,9 @@ def scrape_cabacaba():
 
     except Exception as e:
         print(f"❌ エラー発生: {str(e)}")
+
+    finally:
+        driver.quit()
 
 
 if __name__ == "__main__":
