@@ -66,8 +66,9 @@ def scrape_cabacaba():
                 "budget": "",
                 "phone": "",
                 "address": "",
-                "website": "",  # ウェブサイトURLを追加
-                "gmap_url": "",  # GoogleマップURLを追加
+                "website": "",
+                "gmap_url": "",
+                "description": "",  # 説明文用のフィールドを追加
             }
 
             text_wrapper = club_top.select_one("div.text-wrapper")
@@ -85,6 +86,23 @@ def scrape_cabacaba():
 
                     # ウェブサイトURLを取得
                     store_data["website"] = blog_title["href"]
+
+                # 説明文の取得方法を修正 - getdescription.pyのセレクタを直接使用
+                description_container = soup.select_one(
+                    f"#list-tab-content > div > div > div.infinite-scroll > div:nth-child({count + 1}) > "
+                    "div.club-content > div.club-right > div.club-tab-container.pc > "
+                    "div.club-outer-wrapper > div > div > div > section.card > div.text-wrapper"
+                )
+
+                if description_container:
+                    title_elem = description_container.select_one("h3 a")
+                    description_elem = description_container.select_one("p.description")
+
+                    if title_elem and description_elem:
+                        title = title_elem.text.strip()
+                        description = description_elem.text.strip()
+                        store_data["description"] = f"{title}\n{description}"
+                        print(f"✅ 説明文を取得しました: {title}")  # デバッグ用
 
                 area_text = text_wrapper.select_one("p.comment")
                 if area_text:
@@ -140,6 +158,7 @@ def scrape_cabacaba():
             print(f"🏠 住所: {store_data['address']}")
             print(f"🔗 ウェブサイト: {store_data['website']}")
             print(f"🗺️ Googleマップ: {store_data['gmap_url']}")
+            print(f"📝 説明文:\n{store_data['description']}")
 
         # CSVに保存
         output_file = "cabacaba_stores.csv"
@@ -154,8 +173,9 @@ def scrape_cabacaba():
                 "budget",
                 "phone",
                 "address",
-                "website",  # ウェブサイトURLを追加
-                "gmap_url",  # GoogleマップURLを追加
+                "website",
+                "gmap_url",
+                "description",
             ]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 

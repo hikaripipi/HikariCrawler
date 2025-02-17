@@ -1,31 +1,47 @@
-name,kana,area,type,business_hours,holiday,budget,phone,address,website,gmap_url
+name,kana,area,type,business_hours,holiday,budget,phone,address,website,gmap_url,description
 Fairy,フェアリー,池袋駅（東口）,キャバクラ,20:00～1:00,日曜,"60分 5,500円〜 
                                     
-                                                                                    (税込) (税込)",090-2080-7541,東京都豊島区東池袋1-4-2  三経33ビル 4F,https://www.caba2.net/s/11570,https://www.google.com/maps/search/?api=1&query=Fairy+%E6%B1%A0%E8%A2%8B%E9%A7%85%EF%BC%88%E6%9D%B1%E5%8F%A3%EF%BC%89+%E6%9D%B1%E4%BA%AC%E9%83%BD%E8%B1%8A%E5%B3%B6%E5%8C%BA%E6%9D%B1%E6%B1%A0%E8%A2%8B1-4-2
+                                                                                    (税込) (税込)",090-2080-7541,東京都豊島区東池袋1-4-2  三経33ビル 4F,https://www.caba2.net/s/11570,https://www.google.com/maps/search/?api=1&query=Fairy+%E6%B1%A0%E8%A2%8B%E9%A7%85%EF%BC%88%E6%9D%B1%E5%8F%A3%EF%BC%89+%E6%9D%B1%E4%BA%AC%E9%83%BD%E8%B1%8A%E5%B3%B6%E5%8C%BA%E6%9D%B1%E6%B1%A0%E8%A2%8B1-4-2,"2025年4月GRAND OPEN☆大手グループによる新ブランド店【Fairy（フェアリー）】★
+内装費総額1億円超え！池袋東口プリンスグループ3号店☆新たにオープンするプリンスグループが誇る新ブランド☆大手ならではの確かなクオリティとリーズナブルなお値段からお楽しみ頂ける価格設定で、オープン前から話題騒然！4月のオープン時にはぜひ一度お試し下さい♪"
 cafe&bar Spiral D TOKYO,スパイラルディートウキョウ,歌舞伎町,ガールズバー,21:00～LAST,水曜,"60分 4,000円〜 
                                     
-                                                                                    (税・サ別) (税・サ別)",080-4291-0326,東京都新宿区歌舞伎町1-7-1  J2ビル地上3階全室,https://www.caba2.net/s/11597,https://www.google.com/maps/search/?api=1&query=cafe%26bar+Spiral+D+TOKYO+%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA1-7-1
+                                                                                    (税・サ別) (税・サ別)",080-4291-0326,東京都新宿区歌舞伎町1-7-1  J2ビル地上3階全室,https://www.caba2.net/s/11597,https://www.google.com/maps/search/?api=1&query=cafe%26bar+Spiral+D+TOKYO+%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA1-7-1,"特殊ライトやスモーク！？新感覚ガールズバー【cafe＆bar Spiral D TOKYO - スパイラルディートウキョウ - 】
+めーっちゃ可愛いだけでもヤバイのに、どの子も気さくで明るい性格だから楽しくおしゃべりができちゃう！
+店舗の衣装が3か月ごとに更新されていくからいつ訪れても新鮮な気持ちでお話に楽しむ事ができます！"
 LoiS,ロイズ,大森,キャバクラ,20:00～LAST,日曜,"60分 4,000円
                                     
-                                                                                    (税・サ別) (税・サ別)",03-5753-3110,東京都大田区大森北1-4-1  桂昇大森駅前ビル 8F,https://www.caba2.net/s/948,https://www.google.com/maps/search/?api=1&query=LoiS+%E5%A4%A7%E6%A3%AE+%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%A4%A7%E7%94%B0%E5%8C%BA%E5%A4%A7%E6%A3%AE%E5%8C%971-4-1
+                                                                                    (税・サ別) (税・サ別)",03-5753-3110,東京都大田区大森北1-4-1  桂昇大森駅前ビル 8F,https://www.caba2.net/s/948,https://www.google.com/maps/search/?api=1&query=LoiS+%E5%A4%A7%E6%A3%AE+%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%A4%A7%E7%94%B0%E5%8C%BA%E5%A4%A7%E6%A3%AE%E5%8C%971-4-1,"大森駅東口 姉キャバLoiS (ロイズ)
+大森で話題の姉キャバLoiS (ロイズ)は系列店も多数ある優良店！
+大人の余裕溢れる女性と優雅な夜を存分にお楽しみください。"
 東京夜遊,トウキョウヨアソビ,蒲田,ガールズスナック,19:00～LAST,年中無休,"60分 3,000円
                                     
-                                                                                    (税・サ別) (税・サ別)",080-8528-0850,東京都大田区蒲田4-18-8  京急イドヤビル 3F,https://www.caba2.net/s/11589,https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E5%A4%9C%E9%81%8A+%E8%92%B2%E7%94%B0+%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%A4%A7%E7%94%B0%E5%8C%BA%E8%92%B2%E7%94%B04-18-8
+                                                                                    (税・サ別) (税・サ別)",080-8528-0850,東京都大田区蒲田4-18-8  京急イドヤビル 3F,https://www.caba2.net/s/11589,https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E5%A4%9C%E9%81%8A+%E8%92%B2%E7%94%B0+%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%A4%A7%E7%94%B0%E5%8C%BA%E8%92%B2%E7%94%B04-18-8,"広々としたソファで楽しめるスナック【東京夜遊 - トウキョウヨアソビ - 】
+京急蒲田駅からスグの場所にあるスナック東京夜遊！
+２０代を中心に活躍する店内ではいつでもにぎやかに楽しめます♪
+ソファが広く、おひとり様から団体様まで幅広いシーンでご利用頂けます！"
 小結,オムスビ,高田馬場,ガールズバー,20:00～LAST,日曜,"60分 3,000円
                                     
-                                                                                    (税・サ別) (税・サ別)",03-6205-6887,東京都新宿区高田馬場2‐19‐7  タックイレブン高田馬場 1F,https://www.caba2.net/s/11590,https://www.google.com/maps/search/?api=1&query=%E5%B0%8F%E7%B5%90+%E9%AB%98%E7%94%B0%E9%A6%AC%E5%A0%B4+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E9%AB%98%E7%94%B0%E9%A6%AC%E5%A0%B42%E2%80%9019%E2%80%907
+                                                                                    (税・サ別) (税・サ別)",03-6205-6887,東京都新宿区高田馬場2‐19‐7  タックイレブン高田馬場 1F,https://www.caba2.net/s/11590,https://www.google.com/maps/search/?api=1&query=%E5%B0%8F%E7%B5%90+%E9%AB%98%E7%94%B0%E9%A6%AC%E5%A0%B4+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E9%AB%98%E7%94%B0%E9%A6%AC%E5%A0%B42%E2%80%9019%E2%80%907,"おむすびが食べられる和風ガールズバー【小結 - オムスビ - 】
+高田馬場駅からスグ！徒歩1分以内の好立地にあるガールズバーが小結！おにぎり専門店の顔を持つお食事処だからおにぎりは本格的な美味しさ！かわいくて気さくな女の子達とお酒も楽しめる唯一無二のお店です♪"
 NUMBER46,ナンバーフォーティーシックス,歌舞伎町,コンカフェ＆バー,18:00～1:00,年中無休,"30分 640円〜 
                                     
-                                                                                    (税・サ別) (税・サ別)",03-6457-6185,東京都新宿区歌舞伎町2-45-17  GEST33ビル 2F,https://www.caba2.net/s/11599,https://www.google.com/maps/search/?api=1&query=NUMBER46+%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA2-45-17
+                                                                                    (税・サ別) (税・サ別)",03-6457-6185,東京都新宿区歌舞伎町2-45-17  GEST33ビル 2F,https://www.caba2.net/s/11599,https://www.google.com/maps/search/?api=1&query=NUMBER46+%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA2-45-17,"正統派アイドルコンカフェ【NUMBER46 - ナンバーフォーティーシックス - 】
+業界初！？の正統派アイドル系コンカフェが歌舞伎町に登場！
+こんなに清楚な子に会えるのはNUMBER46だけ！
+予約制だから人の目を気にせず利用できるのも嬉しいポイント♪"
 CLUB AOI,クラブアオイ,歌舞伎町,キャバクラ,20:00～LAST,日曜,"60分 6,000円〜 
                                     
-                                                                                    (税・サ別) (税・サ別)",03-6233-7061,東京都新宿区歌舞伎町2-23-12  チェックメイトビル 1F,https://www.caba2.net/s/5805,https://www.google.com/maps/search/?api=1&query=CLUB+AOI+%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA2-23-12
+                                                                                    (税・サ別) (税・サ別)",03-6233-7061,東京都新宿区歌舞伎町2-23-12  チェックメイトビル 1F,https://www.caba2.net/s/5805,https://www.google.com/maps/search/?api=1&query=CLUB+AOI+%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA2-23-12,"オーナーママとして、初の「一条 葵プロデュース」話題の店舗「CLUB AOI-クラブ アオイ」
+【一条 葵さん】が全てをイチから作り上げた歌舞伎町で今最も注目度のあるお店！白を基調とした内装や、キャストなど全てを徹底的にこだわり抜いた当店へ是非一度ご来店下さい！"
 CLUB NOW,クラブ ナウ,歌舞伎町,キャバクラ,20:00～LAST,日曜,"60分 6,000円〜 
                                     
-                                                                                    (税・サ別) (税・サ別)",03-6457-6156,東京都新宿区歌舞伎町2-10-6  ピア新宿ビル B1F,https://www.caba2.net/s/29,https://www.google.com/maps/search/?api=1&query=CLUB+NOW+%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA2-10-6
+                                                                                    (税・サ別) (税・サ別)",03-6457-6156,東京都新宿区歌舞伎町2-10-6  ピア新宿ビル B1F,https://www.caba2.net/s/29,https://www.google.com/maps/search/?api=1&query=CLUB+NOW+%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA2-10-6,"この上なく重厚な最高のラグジュアリークラブ『NOW-ナウ-』。
+すべてに於いて贅を尽くしたハイクオリティな空間で優雅な時間と本物のステータスをご提供いたします。"
 DEAREST,ディアレスト,歌舞伎町,キャバクラ,20:00～LAST,日曜,"60分 12,000円〜 
                                     
-                                                                                    (税・サ別) (税・サ別)",03-6457-3505,東京都新宿区歌舞伎町1-3-15  ザ・カテリーナビル B1F,https://www.caba2.net/s/24,https://www.google.com/maps/search/?api=1&query=DEAREST+%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA1-3-15
+                                                                                    (税・サ別) (税・サ別)",03-6457-3505,東京都新宿区歌舞伎町1-3-15  ザ・カテリーナビル B1F,https://www.caba2.net/s/24,https://www.google.com/maps/search/?api=1&query=DEAREST+%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA1-3-15,"歌舞伎町屈指の超大型店舗【DEAREST（ディアレスト）】
+歌舞伎町繁華街のアンダーグラウンドに広がる壮大かつ幻想的フロアが皆様の至福のひと時をご提供します♪"
 High School Marya 上野店,ハイスクールマーヤ,上野,キャバクラ,19:00～LAST,年中無休,"40分 5,880円〜 
                                     
-                                                                                    (税・サ込) (税・サ込)",03-5812-8060,東京都台東区上野2-12-3  大国屋ビル 3F,https://www.caba2.net/s/1020,https://www.google.com/maps/search/?api=1&query=High+School+Marya+%E4%B8%8A%E9%87%8E%E5%BA%97+%E4%B8%8A%E9%87%8E+%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E2-12-3
+                                                                                    (税・サ込) (税・サ込)",03-5812-8060,東京都台東区上野2-12-3  大国屋ビル 3F,https://www.caba2.net/s/1020,https://www.google.com/maps/search/?api=1&query=High+School+Marya+%E4%B8%8A%E9%87%8E%E5%BA%97+%E4%B8%8A%E9%87%8E+%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E2-12-3,"上野キャバクラHigh School Marya・ハイスクールマーヤ上野店 (ハイスクールマーヤ)
+3ヶ月で卒業してしまう素人専門の人気店！エレガントな店内にJK制服を着たエリアTOPレベルの女の子が、お客様に忘れられない時間をご提供致します。"
