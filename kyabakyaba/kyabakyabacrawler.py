@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
+from urllib.parse import quote_plus  # URLエンコード用
 
 
 def scrape_cabacaba():
@@ -51,7 +52,10 @@ def scrape_cabacaba():
         club_tops = soup.select("div.club-top")
         store_infos = soup.select("div.list-info")
 
-        for club_top, store_info in zip(club_tops[:10], store_infos[:10]):
+        for club_top, store_info in zip(club_tops, store_infos):
+            if count >= 10:  # 10件でループを終了
+                break
+
             store_data = {
                 "name": "",
                 "kana": "",
@@ -63,6 +67,7 @@ def scrape_cabacaba():
                 "phone": "",
                 "address": "",
                 "website": "",  # ウェブサイトURLを追加
+                "gmap_url": "",  # GoogleマップURLを追加
             }
 
             text_wrapper = club_top.select_one("div.text-wrapper")
@@ -113,6 +118,12 @@ def scrape_cabacaba():
                         store_data["phone"] = value_text
                     elif "所在地" in label_text:
                         store_data["address"] = value_text
+                        # 店舗名、エリア、番地を使ってGoogleマップURLを生成
+                        search_query = f"{store_data['name']} {store_data['area']} {value_text.split(' ')[0]}"
+                        encoded_query = quote_plus(search_query)
+                        store_data["gmap_url"] = (
+                            f"https://www.google.com/maps/search/?api=1&query={encoded_query}"
+                        )
 
             stores_data.append(store_data)
             count += 1
@@ -128,6 +139,7 @@ def scrape_cabacaba():
             print(f"📱 電話: {store_data['phone']}")
             print(f"🏠 住所: {store_data['address']}")
             print(f"🔗 ウェブサイト: {store_data['website']}")
+            print(f"🗺️ Googleマップ: {store_data['gmap_url']}")
 
         # CSVに保存
         output_file = "cabacaba_stores.csv"
@@ -143,6 +155,7 @@ def scrape_cabacaba():
                 "phone",
                 "address",
                 "website",  # ウェブサイトURLを追加
+                "gmap_url",  # GoogleマップURLを追加
             ]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
